@@ -10,6 +10,7 @@
 
 - [Project Configuration](#1-project-configuration)
 - [Spring Dependencies](#2-spring-dependencies)
+- [APIs Testing](#3-apis-testing)
 
 ---
 
@@ -27,3 +28,7 @@
 - Spring Web
 - Spring Data JPA
 - MySQL Driver
+
+### 3. APIs Testing
+
+Import [HRIS.postman_Collection](./src/test/HRIS.postman_collection.json) to [Postman](https://www.postman.com/) for testing.
