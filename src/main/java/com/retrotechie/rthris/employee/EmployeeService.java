@@ -8,7 +8,7 @@ import java.util.List;
 @Service
 public class EmployeeService {
     @Autowired  // Instantiate a class
-    EmployeeRepository employeeRepository;
+    private EmployeeRepository employeeRepository;
 
     // CREATE
     public Employee createEmployee(Employee employee) {
