@@ -7,8 +7,9 @@ import java.util.List;
 
 @RestController // Combination of @Controller & @ResponseBody
 @RequestMapping("/api") // Define a base URL for all REST APIs created in this controller
+@CrossOrigin("http://localhost:3000") // Connect frontend and backend
 public class EmployeeController {
-    @Autowired  // Inject EmployeeService as a dependency
+    @Autowired // Inject EmployeeService as a dependency
     private EmployeeService employeeService;
 
     // CREATE
@@ -30,7 +31,7 @@ public class EmployeeController {
     // `@PathVariable` means the API endpoint has a path parameter involved
     // Below code will map `employeeId` value from the endpoint to `id`
     public Employee updateEmployee(@PathVariable(value = "employeeId") Long id,
-                                   @RequestBody Employee employeeDetails) {
+            @RequestBody Employee employeeDetails) {
         return employeeService.updateEmployee(id, employeeDetails);
     }
 
