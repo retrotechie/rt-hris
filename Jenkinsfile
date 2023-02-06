@@ -11,9 +11,10 @@ pipeline {
 
                 echo "...Update Database Credentials"
 
+                sh "chmod +x ./db/dbconnection.sh"
+
                 // Update DB Credentials 1 - Credentials values are stored in dbconnection
                 /* 
-                sh "chmod +x ./dbconnection.sh"
                 sh "./dbconnection.sh"
                 */
 
@@ -34,7 +35,7 @@ pipeline {
                                                         name: 'DB User Password') ]
                     }   
                 }             
-                sh "./dbconnection.sh ${env.DB_NAME} ${env.DB_USER_NAME} ${env.DB_USER_PASSWORD}"
+                sh "./db/dbconnection.sh ${env.DB_NAME} ${env.DB_USER_NAME} ${env.DB_USER_PASSWORD}"
 
                 echo "...Build Gradle project"
                 sh "./gradlew clean build"      // use wrapper to build Gradle project
