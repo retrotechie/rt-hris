@@ -1,5 +1,6 @@
 #!/bin/bash
-
+# For Jenkins pipeline
+# Get user inputs on Jenkins and update db credentials for db connection
 database=$1
 username=$2
 password=$3
