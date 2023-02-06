@@ -40,5 +40,17 @@ pipeline {
                 sh "./gradlew clean build"      // use wrapper to build Gradle project
             }
         }
+        stage("Build Frontend") {
+            steps {
+                echo "|------------------> Build Frontend <------------------|"
+                
+                echo "...Update frontend submodule"
+                sh "git submodule update --init --recursive"
+
+                dir("src/main/frontend") {
+                    sh "ls"     // verify frontend submodule pull
+                }
+            }
+        }
     }
 }
