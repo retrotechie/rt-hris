@@ -12,10 +12,9 @@ pipeline {
                 echo "...Update Database Credentials"
 
                 sh "chmod +x ./dbconnection.sh"
-                
+
                 // Update DB Credentials 1 - Credentials values are stored in dbconnection
                 /* 
-
                 sh "./dbconnection.sh"
                 */
 
